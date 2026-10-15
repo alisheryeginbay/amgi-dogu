@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(prog="amgi", description="Scripts for remembering things.")
+    parser = argparse.ArgumentParser(prog="amgi-dogu", description="Scripts for remembering things.")
     commands = parser.add_subparsers(dest="command", required=True)
 
     major = commands.add_parser("major", help="Generate an Anki deck for the Mnemonic Major System.")
@@ -14,7 +14,7 @@ def main() -> None:
 
     args = parser.parse_args()
     if args.command == "major":
-        from amgi.major_system import generate
+        from amgi_dogu.major_system import generate
 
         generate(args.output, args.deck_name)
         print(f"Wrote 10 digit sound cards to {args.output}")
